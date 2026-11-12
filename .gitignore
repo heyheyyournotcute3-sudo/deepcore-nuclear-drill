@@ -1,0 +1,6 @@
+/target
+/saves
+*.tmp
+lobby.db
+lobby.db-shm
+lobby.db-wal

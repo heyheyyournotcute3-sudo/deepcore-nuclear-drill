@@ -1,0 +1,9 @@
+[package]
+name = "atlas_gen"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+deepcore_shared = { workspace = true }
+image = { workspace = true }

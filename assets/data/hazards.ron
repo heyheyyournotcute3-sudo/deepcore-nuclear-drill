@@ -1,0 +1,12 @@
+// Per-layer hazard tuning overrides. The hazard list itself lives in layers.ron; this file holds
+// the difficulty multipliers designers tweak during a balance pass.
+[
+    (layer: "shale_beds", hazard: "darkness", multiplier: 1.0),
+    (layer: "granite_depths", hazard: "flooding", multiplier: 1.0),
+    (layer: "basalt_furnace", hazard: "heat", multiplier: 1.0),
+    (layer: "basalt_furnace", hazard: "gas", multiplier: 1.0),
+    (layer: "deep_crust", hazard: "radiation", multiplier: 1.0),
+    (layer: "deep_crust", hazard: "cave_in", multiplier: 1.0),
+    (layer: "mantle_edge", hazard: "heat", multiplier: 1.2),
+    (layer: "mantle_edge", hazard: "radiation", multiplier: 1.5),
+]

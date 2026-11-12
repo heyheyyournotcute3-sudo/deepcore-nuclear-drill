@@ -1,0 +1,20 @@
+[package]
+name = "deepcore_server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+deepcore_shared = { workspace = true }
+bevy = { workspace = true }
+bevy_replicon_renet = { workspace = true, features = ["server"] }
+bevy_replicon = { workspace = true, features = ["server"] }
+serde = { workspace = true }
+ron = { workspace = true }
+postcard = { workspace = true }
+zstd = { workspace = true }
+rand = { workspace = true }
+rand_chacha = { workspace = true }
+tracing = { workspace = true }
+clap = { workspace = true }
+anyhow = { workspace = true }

@@ -1,0 +1,17 @@
+[package]
+name = "deepcore_client"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+deepcore_shared = { workspace = true }
+bevy = { workspace = true }
+bevy_replicon_renet = { workspace = true, features = ["client"] }
+bevy_replicon = { workspace = true, features = ["client"] }
+bevy_egui = { workspace = true }
+serde = { workspace = true }
+ron = { workspace = true }
+rand = { workspace = true }
+tracing = { workspace = true }
+clap = { workspace = true }

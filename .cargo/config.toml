@@ -1,0 +1,7 @@
+[build]
+# Debug builds of Bevy's dependency tree are slow to link on small machines; a single job keeps
+# memory use predictable. Override with CARGO_BUILD_JOBS for faster machines.
+jobs = 2
+
+[target.x86_64-unknown-linux-gnu]
+rustflags = []

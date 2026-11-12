@@ -1,0 +1,127 @@
+// Deepcore tech tree. Nodes are researched at the Research Desk by delivering items.
+// Every machine with a `tech` field must be listed in that node's `unlocks`.
+[
+    (id: "foundations", name: "Foundations", era: 0, parents: [],
+     cost: [("timber", 20), ("stone_cobble", 20)],
+     unlocks: ["workbench", "storage_crate", "brick_kiln", "research_desk"],
+     description: "Basic tools, storage and the first kiln."),
+
+    (id: "smelting", name: "Smelting", era: 1, parents: ["foundations"],
+     cost: [("raw_copper", 10), ("raw_iron", 10), ("coal", 10)],
+     unlocks: ["stone_furnace", "bench_stone_furnace"],
+     description: "Turn ore into ingots with a coal-fired furnace."),
+
+    (id: "metallurgy", name: "Metallurgy", era: 1, parents: ["smelting"],
+     cost: [("iron_ingot", 12), ("bronze_ingot", 8)],
+     unlocks: ["anvil", "smelt_zinc_cadmium", "smelt_bronze", "smelt_brass"],
+     description: "Anvils, plates, gears and alloy smelting."),
+
+    (id: "steelmaking", name: "Steelmaking", era: 1, parents: ["metallurgy"],
+     cost: [("iron_plate", 12), ("bricks", 20), ("coal", 20)],
+     unlocks: ["blast_furnace", "anvil_hardened_pickaxe", "anvil_steel_plate",
+               "anvil_steel_rod", "anvil_steel_cable", "anvil_steel_support",
+               "anvil_steel_plate_block"],
+     description: "Blast furnace, steel and the Hardened Steel Pickaxe."),
+
+    (id: "steam_power", name: "Steam Power", era: 2, parents: ["steelmaking"],
+     cost: [("steel_plate", 20), ("copper_pipe", 10), ("bronze_gear", 5)],
+     unlocks: ["steam_boiler", "steam_engine", "copper_pipe_block"],
+     description: "Boilers, pipes and steam engines."),
+
+    (id: "ore_processing", name: "Ore Processing", era: 2, parents: ["steam_power"],
+     cost: [("steel_plate", 16), ("bronze_gear", 8), ("copper_pipe", 8)],
+     unlocks: ["crusher", "ore_washer"],
+     description: "Crushing and washing raise ore yield."),
+
+    (id: "logistics", name: "Logistics", era: 2, parents: ["steam_power"],
+     cost: [("steel_plate", 12), ("steel_cable", 20), ("iron_gear", 6)],
+     unlocks: ["mine_lift", "conveyor_block", "rail_block"],
+     description: "Lifts, conveyors and rails move ore for you."),
+
+    (id: "steam_drill", name: "Steam Drill", era: 2, parents: ["ore_processing", "logistics"],
+     cost: [("steel_plate", 20), ("brass_gear", 6), ("copper_pipe", 12), ("steam_canister", 1)],
+     unlocks: ["steam_drill"],
+     description: "A powered drill that opens the Basalt Furnace."),
+
+    (id: "electrification", name: "Electrification", era: 3, parents: ["steam_drill"],
+     cost: [("steel_plate", 30), ("copper_cable", 40), ("silicon", 10)],
+     unlocks: ["steam_turbine", "generator", "battery_bank", "arc_furnace",
+               "electrolysis_cell", "circuit_assembler", "charging_station",
+               "cable_block", "vent_fan", "electric_pump", "electric_lamp",
+               "arc_silicon", "arc_aluminium", "arc_steel", "arc_nickel",
+               "arc_tungsten", "arc_chromium", "arc_zirconium",
+               "electro_chlorine_lye", "electro_aluminium",
+               "circuit_mk1", "battery_pack", "glass_lens", "speed_module",
+               "efficiency_module"],
+     description: "Electricity: turbines, generators, cables and batteries."),
+
+    (id: "circuitry", name: "Circuitry", era: 3, parents: ["electrification"],
+     cost: [("circuit_mk1", 8), ("gold_ingot", 6), ("silicon", 20)],
+     unlocks: ["circuit_mk2"],
+     description: "High-grade circuits for advanced machinery."),
+
+    (id: "chemistry", name: "Chemistry", era: 4, parents: ["electrification"],
+     cost: [("sulfuric_acid", 6), ("steel_plate", 20), ("circuit_mk1", 4)],
+     unlocks: ["chemical_plant", "chem_sulfuric_acid", "chem_fluorine", "chem_salt_split",
+               "electro_hydrogen_peroxide"],
+     description: "Acids, fluorine compounds and the Chemical Plant."),
+
+    (id: "advanced_materials", name: "Advanced Materials", era: 4, parents: ["chemistry", "circuitry"],
+     cost: [("stainless_plate", 10), ("tungsten_carbide", 6), ("bearing", 6)],
+     unlocks: ["alloy_furnace", "machine_shop", "rare_earth_separator",
+               "alloy_stainless", "alloy_tungsten_carbide", "alloy_steel_gear",
+               "alloy_lead_shielding", "shop_bearing", "shop_turbine_blade",
+               "shop_centrifuge_rotor", "shop_stainless_rotor", "shop_drill_head",
+               "shop_ore_scanner", "shop_stainless_casing",
+               "rare_earth_magnet", "rare_earth_zirconium"],
+     description: "Stainless steel, tungsten carbide and precision parts."),
+
+    (id: "hazard_gear", name: "Hazard Gear", era: 4, parents: ["advanced_materials"],
+     cost: [("lead_shielding", 8), ("battery_pack", 4), ("glass_lens", 4)],
+     unlocks: ["decon_shower", "cooling_suit", "respirator", "hazmat_suit", "geiger_counter"],
+     description: "Cooling suit, respirator, hazmat suit and Geiger counter."),
+
+    (id: "deep_crust", name: "Deep Crust", era: 4, parents: ["hazard_gear"],
+     cost: [("tungsten_carbide", 10), ("circuit_mk2", 4), ("rare_earth_magnet", 4)],
+     unlocks: ["shop_tungsten_drill", "tungsten_drill"],
+     description: "The Tungsten-Carbide Drill reaches layer 5."),
+
+    (id: "uranium_milling", name: "Uranium Milling", era: 5, parents: ["deep_crust"],
+     cost: [("uranium_ore", 20), ("sulfuric_acid", 8), ("lead_plate", 10)],
+     unlocks: ["leaching_tank", "precipitator", "leach_uranium", "precipitate_yellowcake",
+               "crush_uranium"],
+     description: "Crush, leach and precipitate uranium ore into yellowcake."),
+
+    (id: "conversion", name: "Conversion", era: 5, parents: ["uranium_milling"],
+     cost: [("yellowcake", 6), ("fluorine_compound", 6), ("stainless_plate", 8)],
+     unlocks: ["conversion_plant", "convert_uf6"],
+     description: "Convert yellowcake into uranium hexafluoride."),
+
+    (id: "enrichment", name: "Enrichment", era: 5, parents: ["conversion"],
+     cost: [("uf6_canister", 4), ("stainless_rotor", 4), ("rare_earth_magnet", 8)],
+     unlocks: ["centrifuge", "enrich_uranium"],
+     description: "A centrifuge cascade enriches UF6 into usable fuel."),
+
+    (id: "fuel_fabrication", name: "Fuel Fabrication", era: 5, parents: ["enrichment"],
+     cost: [("enriched_canister", 2), ("zirconium_tubing", 4), ("stainless_casing", 2)],
+     unlocks: ["fuel_fabricator", "fabricate_fuel_rod", "fabricate_core_cell",
+               "shop_zirconium_tubing"],
+     description: "Fuel rods for the reactor and compact core cells for the drill."),
+
+    (id: "reactor_engineering", name: "Reactor Engineering", era: 5, parents: ["fuel_fabrication"],
+     cost: [("reactor_casing", 20), ("graphite_moderator", 8), ("control_rod", 4)],
+     unlocks: ["reactor", "reactor_console", "scram_panel", "heat_exchanger",
+               "alloy_graphite_moderator", "alloy_reactor_casing", "fabricate_control_rod"],
+     description: "Build and operate the reactor safely."),
+
+    (id: "waste_handling", name: "Waste Handling", era: 5, parents: ["reactor_engineering"],
+     cost: [("waste_cask", 4), ("lead_shielding", 10), ("dense_shielding_plate", 2)],
+     unlocks: ["cooling_pool", "waste_vault", "cool_spent_fuel", "cool_spent_cell",
+               "alloy_dense_shielding", "repack_core_cell"],
+     description: "Cool, cask and vault nuclear waste."),
+
+    (id: "nuclear_drill", name: "Nuclear Drill", era: 5, parents: ["waste_handling"],
+     cost: [("compact_core_cell", 1), ("drill_head", 4), ("rare_earth_magnet", 4)],
+     unlocks: ["build_nuclear_drill", "nuclear_drill"],
+     description: "The Nuclear Drill: a 3x3 tunnel through anything."),
+]
