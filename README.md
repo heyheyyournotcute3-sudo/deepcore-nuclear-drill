@@ -7,6 +7,11 @@ and six Eras until they can refine uranium and build a **Nuclear Drill**.
 Built on Bevy 0.20 with a headless authoritative server, renet/UDP networking via
 `bevy_replicon`, and all content in editable RON files.
 
+![A live session: procedural terrain, a tree, the HUD and the hotbar](docs/screenshots/world.png)
+
+*An unmodified screenshot of a client connected to a dedicated server: terrain generated from the
+seed, a tree, the depth meter, vitals and the starting Steel Pickaxe in hotbar slot 1.*
+
 ## Quick start
 
 ```bash
